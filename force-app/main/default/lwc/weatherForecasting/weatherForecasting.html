@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title={cityName}>
+                <!--lightning-layout-item size="6" medium-device-size="4" padding="around-small">
+                    <lightning-combobox name="cities"
+                        label="City Name"
+                        value={cityValue}
+                        placeholder="--Select--"
+                        options={options}
+                        onchange={handleChange} >
+                    </lightning-combobox>
+                </br-->
+            <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+                <lightning-input type="text" value={cityValue} label="City Name" onchange={handleChange}>
+                </lightning-input>
+                <!--lightning-input type="text" value={postalValue} label="Postal code" onchange={handleChange}>
+                </lightning-input-->
+                </br>
+                <lightning-button label="Update Weather" onclick={UpdateWeather} variant="Brand" ></lightning-button>
+             </lightning-layout-item>
+    </lightning-card>
+     <lightning-layout  if:true={weatherchk}>
+                <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+                    <lightning-card icon-name="standard:topic" title="Temperature">
+                        <div class="slds-align_absolute-center color-Red">
+                            <template if:true={result}>
+                                {temperature}
+                            </template>
+                        </div>
+                    </lightning-card>
+                </lightning-layout-item>
+           </lightning-layout>
+   </template>
+</template>
+
+
